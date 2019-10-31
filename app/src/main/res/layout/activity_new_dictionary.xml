@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewDictionary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/input">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="File name:"
+            android:layout_marginBottom="1dp" />
+
+        <EditText
+            android:id="@+id/nameOfFile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/input"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nextBack">
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:layout_marginBottom="1dp" />
+
+        <EditText
+            android:id="@+id/imagineNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="30dp"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/nextBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/input"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="30dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:onClick="actionOnButtonClicked"
+            android:text="back" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:onClick="actionOnButtonClicked"
+            android:text="next" />
+
+    </GridLayout>
+
+</android.support.constraint.ConstraintLayout>
