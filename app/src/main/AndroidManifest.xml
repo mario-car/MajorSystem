@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/mind"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ModifyDictionary"></activity>
         <activity android:name=".EditDictionary" />
         <activity android:name=".ChooseDictionary" />
         <activity

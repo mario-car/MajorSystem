@@ -1,5 +1,6 @@
 package hfad.com.majorsystemdrill;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -59,7 +60,12 @@ public class EditDictionary extends AppCompatActivity {
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    // your handler code here
+                    int checkedRadioButton = radioGroup.getCheckedRadioButtonId();
+                    RadioButton rb = radioGroup.findViewById(checkedRadioButton);
+                    String fileName = rb.getText().toString();
+                    Intent intent = new Intent(v.getContext(), ModifyDictionary.class);
+                    intent.putExtra("fileName", fileName);
+                    startActivity(intent);
                 }
             });
 
