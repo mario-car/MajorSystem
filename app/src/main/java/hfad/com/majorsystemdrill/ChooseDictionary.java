@@ -26,14 +26,18 @@ public class ChooseDictionary extends AppCompatActivity {
         ll.addView(radioGroup);
 
         sharedPreferences = getSharedPreferences("activeDictionary", MODE_PRIVATE);
-        String activeFile = sharedPreferences.getString("active", "majorsystem_HR.txt");
+        String activeFile = sharedPreferences.getString("active", "majorsystem_EN.txt");
 
         // get assets dictionaries
-        RadioButton r = new RadioButton(this);
-        r.setText("majorsystem_HR.txt");
-        if (activeFile.contentEquals("majorsystem_HR.txt")) r.setChecked(true);
+        RadioButton r1 = new RadioButton(this);
+        r1.setText("majorsystem_EN.txt");
+        if (activeFile.contentEquals("majorsystem_EN.txt")) r1.setChecked(true);
+        RadioButton r2 = new RadioButton(this);
+        r2.setText("majorsystem_HR.txt");
+        if (activeFile.contentEquals("majorsystem_HR.txt")) r2.setChecked(true);
 
-        radioGroup.addView(r);
+        radioGroup.addView(r1);
+        radioGroup.addView(r2);
 
 
 

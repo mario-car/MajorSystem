@@ -104,10 +104,10 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> getArrayList() {
         ArrayList<String> dictionary = new ArrayList<>();
         SharedPreferences sharedPreferences = getSharedPreferences("activeDictionary", MODE_PRIVATE);
-        String file = sharedPreferences.getString("active", "majorsystem_HR.txt");
+        String file = sharedPreferences.getString("active", "majorsystem_EN.txt");
         try {
             InputStream is;
-            if (file.contentEquals("majorsystem_HR.txt")) {
+            if (file.contentEquals("majorsystem_EN.txt") || file.contentEquals("majorsystem_HR.txt")) {
                 is = getAssets().open(file);
             } else {
                 is = openFileInput(file);

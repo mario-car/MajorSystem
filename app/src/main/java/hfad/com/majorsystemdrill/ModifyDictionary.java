@@ -36,8 +36,12 @@ public class ModifyDictionary extends AppCompatActivity {
         invalidImage = false;
         number = findViewById(R.id.numberKey);
         image = findViewById(R.id.imagineNumber);
+        String fileName = getIntent().getStringExtra("fileName");
+        if (fileName.contentEquals("majorsystem_EN.txt") || fileName.contentEquals("majorsystem_HR.txt")) {
+            fileName = fileName.replace("majorsystem", "my");
+        }
         TextView dictName = findViewById(R.id.nameOfDict);
-        dictName.setText(getIntent().getStringExtra("fileName"));
+        dictName.setText(fileName);
 
         no = 0;
         list = getArrayList();
@@ -161,7 +165,7 @@ public class ModifyDictionary extends AppCompatActivity {
        String fileName = getIntent().getStringExtra("fileName");
         try {
             InputStream is;
-            if (fileName.contentEquals("majorsystem_HR.txt")) {
+            if (fileName.contentEquals("majorsystem_HR.txt") || fileName.contentEquals("majorsystem_EN.txt")) {
                 is = getAssets().open(fileName);
             } else {
                 is = openFileInput(fileName);

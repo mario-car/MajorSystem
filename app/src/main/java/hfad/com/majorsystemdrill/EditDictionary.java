@@ -32,6 +32,14 @@ public class EditDictionary extends AppCompatActivity {
         radioGroup = new RadioGroup(this);
         ll1.addView(radioGroup);
 
+        // get assets dictionaries
+        RadioButton r1 = new RadioButton(this);
+        r1.setText("majorsystem_EN.txt");
+        RadioButton r2 = new RadioButton(this);
+        r2.setText("majorsystem_HR.txt");
+        radioGroup.addView(r1);
+        radioGroup.addView(r2);
+
 
         File file = new File(getBaseContext().getFilesDir().toString());
         File[] list = file.listFiles();
